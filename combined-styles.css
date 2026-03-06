@@ -373,3 +373,24 @@ img.full-bleed {
   }
 }
 
+/* Align main content with the hero (left start like Mountains page) */
+:root {
+  --hero-gutter: 8%;
+}
+
+/* Left-align main content under the full-width hero */
+.main {
+  max-width: var(--content-max);    /* keeps indoor/safety constrained */
+  margin: 0 0 0 calc(var(--hero-gutter)); /* start at hero's left gutter */
+  padding: 30px var(--container-padding);
+}
+
+/* For very large screens keep a sensible max width so content doesn't go too wide */
+@media (min-width: 1600px) {
+  .main {
+    max-width: 1100px;
+  }
+}
+
+/* keep mountains page layout unaffected: if a page should be full-width,
+   wrap its main content in .container (recommended) */

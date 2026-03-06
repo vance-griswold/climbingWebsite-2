@@ -392,7 +392,10 @@ img.full-bleed {
   }
 }
 
+/* Center main content ONLY on Submit page */
+.mountains-hero + .main {
+  margin: 0 auto !important;
+}
 
 
-/* ====== End of overrides ====== */
 

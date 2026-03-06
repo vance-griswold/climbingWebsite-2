@@ -395,51 +395,60 @@ img.full-bleed {
 /* keep mountains page layout unaffected: if a page should be full-width,
    wrap its main content in .container (recommended) */
 
-/* ---------- small fixes: center practices, unify venue image sizing, center form ---------- */
+/* ---------- Indoor + Safety Fixes ---------- */
 
-/* 1) Make section titles centered (applies to Safety Best Practices heading) */
-.section-title {
-  text-align: center;
-}
-
-/* 2) Ensure practices grid is centered and constrained visually */
-.practices {
-  justify-content: center;
-  max-width: 820px;   /* visual width for the group of buttons */
-  margin: 0 auto 30px; /* center the block under the centered title */
-  gap: 18px 24px;
-}
-
-/* 3) Make all venue/indoor images match the gear sizing even if they lack the class */
+/* 1) Make all indoor & safety images the same larger size */
 .venue-block img,
-.venue-block .gear-img,
 .gear-img {
-  width: 500px;       /* bigger images as requested */
+  width: 500px;
   height: 340px;
   object-fit: cover;
   border-radius: 6px;
   display: block;
-  max-width: none;    /* override global img rule */
+  max-width: none; /* override global img rule */
 }
 
-/* 4) Keep image responsive on small screens */
-@media (max-width:820px) {
+/* 2) Center the Safety Best Practices title */
+.main .section-title {
+  text-align: center;
+}
+
+/* 3) Center the Best Practices grid */
+.main .practices {
+  max-width: 820px;
+  margin: 0 auto 30px;
+  justify-content: center;
+  gap: 18px 24px;
+}
+
+/* 4) Re-center the Share a Route form */
+.form-card {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 30px 0;
+  max-width: 520px;
+}
+
+/* 5) Responsive adjustments */
+@media (max-width: 820px) {
+
   .venue-block img,
   .gear-img {
     width: 100%;
     height: auto;
   }
-  .practices {
+
+  .main .practices {
     grid-template-columns: repeat(2, 1fr);
     max-width: 100%;
     padding: 0 16px;
   }
-}
 
-/* 5) Center the form-card visually on the page even when .main is left-aligned */
-.form-card {
-  margin: 30px 0;            /* remove auto-centering inside a left-aligned .main */
-  position: relative;
-  left: 50%;                 /* center relative to the page */
-  transform: translateX(-50%);
+  .form-card {
+    left: auto;
+    transform: none;
+    margin: 30px auto;
+    width: calc(100% - 40px);
+  }
 }

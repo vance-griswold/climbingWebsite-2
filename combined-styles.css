@@ -372,3 +372,21 @@ img.full-bleed {
   }
 }
 
+/* Indoor/Safety layout override */
+
+:root {
+  --gear-img-w: 320px;
+  --gear-img-h: 220px;
+}
+
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gear-img {
+  width: var(--gear-img-w);
+  height: var(--gear-img-h);
+  object-fit: cover;
+  max-width: none;
+}
